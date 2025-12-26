@@ -83,7 +83,7 @@ export default function Home() {
 │  NextJS UI  │ ◄──────────────► │  NestJS API  │
 └─────────────┘                  └───────┬──────┘
                                          │
-                                    RabbitMQ1
+                                    RabbitMQ
                                          │
                           ┌──────────────┼──────────────┐
                           ▼              ▼              ▼
