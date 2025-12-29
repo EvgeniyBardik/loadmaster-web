@@ -4,7 +4,7 @@ import { useState } from 'react'
 import { useMutation } from '@apollo/client'
 import { useRouter } from 'next/navigation'
 import Link from 'next/link'
-import { BoltIcon } from '@heroicons/react/24/outline'
+import { BoltIcon, ArrowLeftIcon } from '@heroicons/react/24/outline'
 import { LOGIN } from '@/lib/graphql/mutations'
 import { useAuthStore } from '@/store/auth-store'
 import { Button } from '@/components/common/Button'
@@ -40,10 +40,21 @@ export default function LoginPage() {
   return (
     <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-primary-50 via-white to-primary-50 px-4">
       <div className="max-w-md w-full">
+        {/* Back to home link */}
+        <Link 
+          href="/" 
+          className="inline-flex items-center text-gray-600 hover:text-gray-900 mb-6 transition-colors"
+        >
+          <ArrowLeftIcon className="h-5 w-5 mr-2" />
+          <span className="text-sm font-medium">Back to Home</span>
+        </Link>
+
         <div className="text-center mb-8">
-          <div className="flex justify-center mb-4">
-            <BoltIcon className="h-12 w-12 text-primary-600" />
-          </div>
+          <Link href="/" className="inline-block">
+            <div className="flex justify-center mb-4 hover:opacity-80 transition-opacity">
+              <BoltIcon className="h-12 w-12 text-primary-600" />
+            </div>
+          </Link>
           <h1 className="text-3xl font-bold text-gray-900">Welcome Back</h1>
           <p className="text-gray-600 mt-2">Sign in to your LoadMaster account</p>
         </div>
